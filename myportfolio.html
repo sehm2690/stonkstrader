@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stock Simulator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-spy="scroll" data-target="#navbarResponsive">
+    <header>
+        <div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Stock Simulator</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="myportfolio.html">My Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Watchlists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                            onclick="get_product_info()">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Middle portion of webpage -->
+        <div class="container text-center">
+            <div class="row">
+                <table border=1 id="stock-portfolio-table" class="table1 bdr1">
+                    <thead>
+                        <tr>
+                            <th colspan="2" class="header"></th>
+                            <th class="txt header">Symbol</th>
+                            <th class="txt header">Description</th>
+                            <th class="num header">Qty</th>
+                            <th class="num header">Purchase Price</th>
+                            <th class="num header">Current Price</th>
+                            <th class="num header">Total Value</th>
+                            <th class="num header">Today's Change</th>
+                            <th class="num header">Total Gain/Loss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="detailButton btn-expand close" id="PS_LONG_0" data-symbol="MPC"
+                                    data-portfolioid="6265363" data-stocktype="long"></div>
+                            </td>
+                            <td><a href="#"></a><a
+                                    href="https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&amp;Sym=MPC&amp;Qty=10">Sell</a>
+                            </td>
+                            <td><a href="#"></a><a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=mpc"
+                                    target="_blank">MPC</a></td>
+                            <td>MARATHON PETROLEUM CORP</td>
+                            <td class="num">10</td>
+                            <td class="num">$17.99</td>
+                            <td class="num">$58.13</td>
+                            <td class="num">$581.30</td>
+                            <td class="num up">$22.60(4.05 %)</td>
+                            <td class="num up">$401.40(223.12 %)</td>
+                        </tr>
+                        <tr class="expandable" id="PS_LONG_0_HP">
+                            <td colspan="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="detailButton btn-expand close" id="PS_LONG_1" data-symbol="AAPL"
+                                    data-portfolioid="6265363" data-stocktype="long"></div>
+                            </td>
+                            <td><a href="#"></a><a
+                                    href="https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&amp;Sym=AAPL&amp;Qty=12">Sell</a>
+                            </td>
+                            <td><a href="#"></a><a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=aapl"
+                                    target="_blank">AAPL</a></td>
+                            <td>APPLE INC</td>
+                            <td class="num">12</td>
+                            <td class="num">$59.09</td>
+                            <td class="num">$120.13</td>
+                            <td class="num">$1,441.56</td>
+                            <td class="num dn">- $11.46(-0.79 %)</td>
+                            <td class="num up">$732.48(103.30 %) </td>
+                        </tr>
+                        <tr class="expandable" id="PS_LONG_1_HP">
+                            <td colspan="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="detailButton btn-expand close" id="PS_LONG_2" data-symbol="TSLA"
+                                    data-portfolioid="6265363" data-stocktype="long"></div>
+                            </td>
+                            <td><a href="#"></a><a
+                                    href="https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&amp;Sym=TSLA&amp;Qty=1042">Sell</a>
+                            </td>
+                            <td><a href="#"></a><a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=tsla"
+                                    target="_blank">TSLA</a></td>
+                            <td>TESLA INC</td>
+                            <td class="num">1042</td>
+                            <td class="num">$16.17</td>
+                            <td class="num">$668.65</td>
+                            <td class="num">$696,734.34</td>
+                            <td class="num dn">- $5,136.02(-0.73 %)</td>
+                            <td class="num up">$679,886.87(4,035.54 %) </td>
+                        </tr>
+                        <tr class="expandable" id="PS_LONG_2_HP">
+                            <td colspan="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="detailButton btn-expand close" id="PS_LONG_3" data-symbol="SPHD"
+                                    data-portfolioid="6265363" data-stocktype="long"></div>
+                            </td>
+                            <td><a href="#"></a><a
+                                    href="https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&amp;Sym=SPHD&amp;Qty=5">Sell</a>
+                            </td>
+                            <td><a href="#"></a><a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=sphd"
+                                    target="_blank">SPHD</a></td>
+                            <td>INVESCO CAPITAL MANAGEMENT LLC - INVESCO S&amp;P 500 HIGH DIVIDEND LOW VOLATILITY ETF
+                            </td>
+                            <td class="num">5</td>
+                            <td class="num">$27.44</td>
+                            <td class="num">$42.23</td>
+                            <td class="num">$211.15</td>
+                            <td class="num up">$211.15(0.00 %)</td>
+                            <td class="num up">$73.95(53.90 %) </td>
+                        </tr>
+                        <tr class="expandable" id="PS_LONG_3_HP">
+                            <td colspan="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="detailButton btn-expand close" id="PS_LONG_4" data-symbol="LBJ"
+                                    data-portfolioid="6265363" data-stocktype="long"></div>
+                            </td>
+                            <td><a href="#"></a><a
+                                    href="https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&amp;Sym=LBJ&amp;Qty=50">Sell</a>
+                            </td>
+                            <td><a href="#"></a><a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=lbj"
+                                    target="_blank">LBJ</a></td>
+                            <td>DIREXION SHARES ETF TRUST - DIREXION DAILY LATIN AMERICA BULL 2X SHARES</td>
+                            <td class="num">50</td>
+                            <td class="num">$33.32</td>
+                            <td class="num">$67.34</td>
+                            <td class="num">$3,366.90</td>
+                            <td class="num up">$3,366.90(0.00 %)</td>
+                            <td class="num up">$1,700.90(102.09 %) </td>
+                        </tr>
+                        <tr class="expandable" id="PS_LONG_4_HP">
+                            <td colspan="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="detailButton btn-expand close" id="PS_LONG_5" data-symbol="SQQQ"
+                                    data-portfolioid="6265363" data-stocktype="long"></div>
+                            </td>
+                            <td><a href="#"></a><a
+                                    href="https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&amp;Sym=SQQQ&amp;Qty=20">Sell</a>
+                            </td>
+                            <td><a href="#"></a><a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=sqqq"
+                                    target="_blank">SQQQ</a></td>
+                            <td>PROSHARES TRUST - PROSHARES ULTRAPRO SHORT QQQ</td>
+                            <td class="num">20</td>
+                            <td class="num">$20.87</td>
+                            <td class="num">$14.49</td>
+                            <td class="num">$289.80</td>
+                            <td class="num up">$289.80(0.00 %)</td>
+                            <td class="num dn">- $127.56(-30.56 %) </td>
+                        </tr>
+                        <tr class="expandable" id="PS_LONG_5_HP">
+                            <td colspan="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="detailButton btn-expand close" id="PS_LONG_6" data-symbol="XSPA"
+                                    data-portfolioid="6265363" data-stocktype="long"></div>
+                            </td>
+                            <td><a href="#"></a><a
+                                    href="https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&amp;Sym=XSPA&amp;Qty=2000">Sell</a>
+                            </td>
+                            <td><a href="#"></a><a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=xspa"
+                                    target="_blank">XSPA</a></td>
+                            <td>XPRESSPA GROUP INC</td>
+                            <td class="num">2000</td>
+                            <td class="num">$0.56</td>
+                            <td class="num">$1.80</td>
+                            <td class="num">$3,600.00</td>
+                            <td class="num dn">- $100.00(-2.70 %)</td>
+                            <td class="num up">$2,480.00(221.43 %) </td>
+                        </tr>
+                        <tr class="expandable" id="PS_LONG_6_HP">
+                            <td colspan="10">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="detailButton btn-expand close" id="PS_LONG_7" data-symbol="OAS"
+                                    data-portfolioid="6265363" data-stocktype="long"></div>
+                            </td>
+                            <td><a href="#"></a><a
+                                    href="https://www.investopedia.com/simulator/trade/tradestock.aspx?too=2&amp;Sym=OAS&amp;Qty=2000">Sell</a>
+                            </td>
+                            <td><a href="#"></a><a href="https://www.investopedia.com/markets/quote?tvwidgetsymbol=oas"
+                                    target="_blank">OAS</a></td>
+                            <td>OASIS PETROLEUM INC. - ORDINARY SHARES - NEW</td>
+                            <td class="num">2000</td>
+                            <td class="num">$0.48</td>
+                            <td class="num">$58.81</td>
+                            <td class="num">$117,620.00</td>
+                            <td class="num up">$3,600.00(3.16 %)</td>
+                            <td class="num up">$116,664.60(12,211.07 %) </td>
+                        </tr>
+                        <tr class="expandable" id="PS_LONG_7_HP">
+                            <td colspan="10">
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr class="no-border">
+                            <td></td>
+                            <td colspan="5" class="num"></td>
+                            <td class="num"><strong>Total</strong></td>
+                            <td class="num">$823,845.05</td>
+                            <td class="num up">$2,242.97(0.27 %)</td>
+                            <td class="num up">$801,812.64 (3,639.24 %)</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table>
+
+                    <tr>
+                        <th colspan="2" class="header"></th>
+                        <th class="txt header">Symbol Description</th>
+                        <th class="txt header">Price</th>
+
+                    </tr>
+                </table>
+                <div class="col-md-7 col-sm-12">
+                    <!-- <h6>Welcome To:</h6>
+                    <h1>Stock Simulator</h1>
+                    <p>We are Stock Simulator and we are here to help you practice trading without risking your hard earned money!</p>
+                    <p>By using this product, you will learn how to trade ion the stock market and get the real-time practice you need to become a successful investor!</p> -->
+                    <!-- <button id="logout-btn" class="btn btn-light px-5 py-2">Get Started</button> -->
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <!-- <h1>yeet</h1> -->
+                </div>
+            </div>
+        </div>
+        <!--  -->
+
+    </header>
+    <main>
+        <div class="container-fluid padding">
+            <div class="row text-center padding">
+                <div class="col-12">
+                    <h2>Connect</h2>
+                    <hr class="light">
+                </div>
+                <div class="col-12 social padding">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href='#'><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-reddit"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <!--                     <hr class="light">
+                    <h5>Customer Service Hours</h5>
+                    <hr class="light">
+                    <p>Mon-Fri: 9am - 9pm</p>
+                    <p>Saturday: 9am - 7pm</p>
+                    <p>Sunday: 9am - 5pm</p> -->
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <p>000-000-0000</p>
+                    <p>stocks@gmail.com</p>
+                    <p>75 University Avenue</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light">
+                    <h5>&copy; Stock Simulator 2021</h5>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script>src="connect.php"</script>
+
+</body>
+
+</html>
+<?php
+
+print("<h2> tickker info</h2>");
+
+
+
+?>

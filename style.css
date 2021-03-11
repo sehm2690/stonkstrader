@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    color: #222;
+  }
+  
+  .navbar{ 
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+    padding: .8rem;
+    background: rgb(151, 151, 151)!important;
+  }
+  
+  .navbar-brand img{
+    height: 3rem;
+  }
+  
+  .navbar-nav li{
+    padding-right: .7rem;
+  }
+  
+  .navbar-light .navbar-nav .nav-link{
+    color: black;
+    padding-top: .8rem;
+  }
+  
+  .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link:hover{
+    color: orange;
+    padding-top: .8rem;
+  }
+  
+  .nav-link{
+    font-size: 1.1em !important;
+  }
+
+  .dropdown-item:hover{
+      color: orange;
+  }
+
+  .btn{
+      color: black;
+      border: 1px solid orange;
+  }
+
+  .btn:hover{
+      background-color: orange;
+      border: 1px solid orange;
+  }
+
+  .col-12{
+    text-align: center;
+  }
+
+  .social a{
+      font-size: 4.5em;
+      padding: 3rem;
+  }
+
+  .fa-twitter{
+      color: #00aced;
+      height: 50px;
+      width: 50px;
+      visibility: 0;
+  }
+
+  .fa-google-plus-g{
+    color: #ff1e00;
+  }
+
+  .fa-reddit{
+      color: #FF4301;
+  }
+
+  .fa-instagram{
+    color: #ff0090;
+  }
+
+  .fa-twitter:hover{
+    color: #0084b4;
+  }
+
+  .fa-google-plus-g:hover{
+    color: #dd4b39;
+  }
+
+  .fa-reddit:hover{
+    color: rgb(214, 57, 0);
+  }
+
+  .fa-instagram:hover{
+    color: #c13584;
+  }
+  
+  header{
+      background-image: url(Background.png);
+      background-size: cover; 
+    }
+
+  .container .row .col-md-7{
+      right: -250px;
+      padding: 22vmin 1vmin;
+      padding-bottom: 35vmin;
+      color: rgb(0, 0, 0);
+  }
+
+  .container .col-md-7 h6{
+      padding: 1vmin;
+      letter-spacing: 4px;
+  }
+
+  .container .col-md-7 h1{
+      font-size: 8vmin;
+      font-weight: bold;
+      padding: 0.1em 0em;
+  }
+
+  .container .col-md-7 p{
+      padding: 1vmin 5vmin;
+  }
+
+  .container .col-md-7 button{
+      border-radius: 30px;
+      font-weight: bold;
+  }
+
+  .col-12 h2{
+    padding-top: 2vmin;
+  }
+
+  footer{
+    background-color: #5A3300;
+    color: white;
+  }
+
+  footer hr{ 
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid rgb(252, 252, 252);
+    margin: 1em 0; 
+    padding: 0; 
+  }
+
+  main hr{
+    display: block; 
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid rgb(0, 0, 0);
+    margin: 1em 0; 
+    padding: 0; 
+  }

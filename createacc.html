@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style-2.css">
+
+    <script>
+        function sendRequest() {
+            var oForm = document.forms[0];
+            var sBody = getRequestBody(oForm);
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("post", oForm.action, true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4) {
+                    if (xhttp.status == 200) {
+                        saveResult(xhttp.responseText);
+                    } else {
+                        saveResult("An error occurred: " + xhttp.statusText);
+                    }
+                }
+            };
+        xhttp.send(sBody);
+        }
+
+        function getRequestBody(oForm) {
+            var aParams = new Array();
+            for (var i = 0; i < oForm.elements.length; i++) {
+                var sParam = encodeURIComponent(oForm.elements[i].name);
+                sParam += "=";
+                sParam += encodeURIComponent(oForm.elements[i].value);
+                aParams.push(sParam);
+            }
+            return aParams.join("&");
+        }
+
+        function saveResult(sMessage) {
+            var divStatus = document.getElementById("divStatus");
+            divStatus.innerHTML = "Request completed: " + sMessage;
+        }
+
+    </script>
+    
+</head>
+<body data-spy="scroll" data-target="#navbarSupportedContent">
+    <header>
+        <div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+                <a class="navbar-brand" href="#">Stock Simulator</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="loginbox">
+    <div class="form">
+        <form method="post" action="get_accounts.php" onsubmit="sendRequest(); return false">
+        
+        
+        <!-- <img src="avatar.png" class="avatar"> -->
+        <h1>Create Account</h1>
+        
+            <p>Username:</p>
+            <input  type="text" name = "uName" placeholder="Enter New Username">
+            <p>Password:</p>
+            <input type="password" name = "pw" placeholder="Enter New Password">
+            
+            <!-- <p>Re-enter Password:</p>
+            <input id="signup-reenter-password" type="re-password" name = "" placeholder="Re-enter New Password"> -->
+            <!--<button id="btn-login" onclick = "createacc()">Create Account</button><br><br> -->
+        
+        <input type="submit" value="Create Account" >
+
+        </form>
+        <div id="divStatus">Hello </div>
+        
+       
+    </div>
+    </div>
+
+    <!-- <script src="auth.js"></script>
+    <script src="index.js"></script> -->
+    <!--<script src="createacc.js"></script> -->
+</body>
